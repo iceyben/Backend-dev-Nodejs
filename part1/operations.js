@@ -55,3 +55,35 @@ console.log(num3 <= num2); //True if less than or equal to
 // || (OR) operator: You can use it to check if at least one condition is true
 
 // ! (NOT) operator: You can use it to negate a condition
+
+
+//Example of using AND, OR and NOT operators
+//Sinario: You are building an application which requires users to be logged in and have a valid credit card to purchase anything. For this we will use two boolean variables isLoggedIn and  isPaid.
+
+
+let isLoggedIn = true;
+let isPaid = false;
+
+console.log("////////////////////");
+
+//1. Using AND operator: you should be logged in and you should be a paid user to make a purchase
+console.log(isLoggedIn && isPaid); //false because isPaid is false
+
+//2. Using OR operator: you can make a purchase if you are logged in or if you are a paid user
+console.log(isLoggedIn || isPaid); //true because isLoggedIn is true
+
+//3. Using NOT operator: You cannot make a purchase if you are not logged in
+console.log(!isLoggedIn); //false because isLoggedIn is true
+
+
+console.log("////////////////////");
+
+//Assignment operators
+let points = 10 + 11 ; //21
+let num1s = 10; //10
+num1s += 5; // num1s = num1s + 5 => 15
+console.log(num1s);
+
+
+console.log("////////////////////");
+
