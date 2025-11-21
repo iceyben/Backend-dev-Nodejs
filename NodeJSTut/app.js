@@ -91,18 +91,75 @@
 // })
 
 const fs = require("fs");
-console.log("///////// Synchronous File Read and Write /////////");
+// console.log("///////// Synchronous File Read and Write /////////");
 
-try {
-    //Write to file Synchronously
-    fs.writeFileSync("./myFolder/myFileSync.txt", "myFileSync says Hi there!");
-    console.log("Write operation successful");
+// try {
+//     //Write to file Synchronously
+//     fs.writeFileSync("./myFolder/myFileSync.txt", "myFileSync says Hi there!");
+//     console.log("Write operation successful");
 
-    //Read from file Synchronously
-    const fileData = fs.readFileSync("./myFolder/myFileSync.txt", {encoding: "utf8"});
-    console.log( "Read operation successful. Here is the data: ");
-    console.log(fileData)
-} catch (error) {
-    console.log( "Error occurred!");
-    console.log(err);
+//     //Read from file Synchronously
+//     const fileData = fs.readFileSync("./myFolder/myFileSync.txt", {encoding: "utf8"});
+//     console.log( "Read operation successful. Here is the data: ");
+//     console.log(fileData)
+// } catch (error) {
+//     console.log( "Error occurred!");
+//     console.log(err);
+// }
+
+
+// console.log( "///////// readdir Module /////////");
+
+// fs.readdir( "./myFolder", (err, files)=>{
+//     if(err){
+//         console.log(`Error reading dir: ${err}`);
+//         return;
+//     }else{
+//         console.log("Directory read successfully. Here are the files: ");
+//         console.log(files);
+//     }
+// })
+
+
+// console.log( "///////// fs.rename Module /////////");
+
+// fs.rename("./myFolder/myFile.txt", "./myFolder/newFileAsync.txt", (err)=>{
+//     if(err){
+//         console.log(`Error renaming file: ${err}`);
+//         return;
+//     }else {
+//         console.log("File renamed successfully!");
+//     }
+// })
+
+
+
+// console.log( "///////// fs.unlink Module /////////");
+
+// fs.unlink( "./myFolder/myFileSync.txt", (err)=> {
+//     if(err){
+//         console.log(`Error deleting file: ${err}`);
+//         return;
+//     }else{
+//         console.log("File deleted successfully!");
+//     }
+// })
+
+
+console.log( "///////// Event-Driven Programming /////////");
+//Importing 'events' module and creating an instance of EventEmitter Class
+const EventEmitter = require("events");
+const myEmitter = new EventEmitter();
+
+// Listener function - welcomeUser()
+const welcomeUser = ()=>{
+    console.log(`Hi there, Welcome to the server!`);
+
+    //Listenering for the userJoined event using the on() method
+
+    myEmitter.on("userJoined", welcomeUser);
+
+    //Emitting the userJoined event using the emit() method
+    myEmitter.emit("userJoined");
 }
+
