@@ -1,11 +1,11 @@
 
 // Modules
-// console.log("////////////////////");
+console.log("////////////////////");
 
-// const sayHello = require("./hello.js");
-// sayHello("Ben");
-// sayHello("Steven");
-// sayHello("Alvin");
+ const sayHello = require("./hello.js");
+sayHello("Ben");
+sayHello("Steven");
+sayHello("Alvin");
 
 // const myModule = require("./myModule.js");
 // console.log(myModule.foo);
@@ -146,20 +146,22 @@ const fs = require("fs");
 // })
 
 
-console.log( "///////// Event-Driven Programming /////////");
-//Importing 'events' module and creating an instance of EventEmitter Class
-const EventEmitter = require("events");
-const myEmitter = new EventEmitter();
+// console.log( "///////// Event-Driven Programming /////////");
+// //Importing 'events' module and creating an instance of EventEmitter Class
+// const EventEmitter = require("events");
+// const myEmitter = new EventEmitter();
 
-// Listener function - welcomeUser()
-const welcomeUser = ()=>{
-    console.log(`Hi there, Welcome to the server!`);
+// // Listener function - welcomeUser()
+// const welcomeUser = ()=>{
+//     console.log(`Hi there, Welcome to the server!`);
 
-    //Listenering for the userJoined event using the on() method
+//     //Listenering for the userJoined event using the on() method
 
-    myEmitter.on("userJoined", welcomeUser);
+//     myEmitter.on("userJoined", welcomeUser);
 
-    //Emitting the userJoined event using the emit() method
-    myEmitter.emit("userJoined");
-}
+//     //Emitting the userJoined event using the emit() method
+//     myEmitter.emit("userJoined");
+// }
+
+
 

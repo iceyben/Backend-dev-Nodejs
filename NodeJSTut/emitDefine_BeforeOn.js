@@ -17,6 +17,5 @@ myEmitter.on("userJoined", sayHi);
 
 // Registering sayHello function as listener
 myEmitter.on("userJoined", sayHello);
-
 //Emitter the event
 myEmitter.emit("userJoined");
