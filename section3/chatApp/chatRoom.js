@@ -8,42 +8,38 @@ const EventEmitter = require("events");
 
  class ChatRoom extends EventEmitter{
     constructor(){
-       super()
-
-       //Now 0ur new set is users
-       this.users = new Set();
-
+        // This referenced the EventEmitter
+        super()
+        this.users = new Set()
     }
-     //join user by adding it to users set of object
+
+    // when user join
     join(user){
-        this.users.add(user);
-        this.emit("join", user)
+       this.users.add(user);
+      this.emit("join", user)
     }
 
-    //Create a send message function
-    sendMessage(user, message){
+    // users should send message if they are part of the users. Example
+    sendMessage(user,message){
         if(this.users.has(user)){
-            this.emit("message", user, message )
+            this.emit(('message',user,message))
         }else{
-            console.log(`${user} is not in chat`);
+            console.log(`${user} was not found in chat`)
         }
     }
 
+    //functionality for leaving the chat room: if a user leave 
     leave(user){
-        if(this.user.has(user)){
-            this.users.delete(user);
-            this.emit("leave", user)
+        if(this.users.has(user)){
+            this.users.delete(user)
+            this.emit("leave",user)
         }else{
-             console.log(`${user} is not in the chat`)
+            console.log(`${user} was not found in the chat`)
         }
     }
+ }
 
 
-}
+ // we need to export ChatApp class so we can use it inside index.js
 
-module.exports = ChatRoom;
-
-
-
-
-
+ module.exports = ChatRoom;
