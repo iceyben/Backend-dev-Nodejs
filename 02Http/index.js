@@ -3,6 +3,7 @@ const http = require("node:http");
 const PORT = 8000;
 
 const server = http.createServer((req,res)=>{
+      console.log(`Incoming request....`);
       const method = req.method;
       const path = req.url;
      
@@ -10,24 +11,40 @@ const server = http.createServer((req,res)=>{
             case "GET":
                   switch (path) {
                         case "/":
-                              res.writeHead(200).end("Welcome Home");
+                              res.writeHead(200).end("<h1>Home Page</h1>");   
                               break;
 
-                        case "/contact-us":
-                              res.writeHead(200).end("mulbahb997@gmail.com");
+                        case "/about-me":
+                              res.writeHead(200).end("<h1>About Page</h1>");
                               break;
 
-                        case "/about":
-                              res.writeHead(200).end("I am a Software Engineer");
+                        case "/contact":
+                              res.writeHead(200).end("<h1>Contact Page</h1>");
                               break;
+                  
                         default:
-                              res.writeHead(404).end("page not found");
+                              res.writeHead(404).end("<h1>Sorry Page Not Found!</h1>")
                               break;
                   }
-                  break;
+            break;
+
             case "POST":
+                  switch(path){
+                        case "/tweet":
+                              try {
+                                    
+                              } catch (error) {
+                                    
+                              }
+                  }
+      
+            default:
+                  res.writeHead(404);
+                  res.end("Sorry wrong request");
                   break;
-      }     
+      }
+
+
 })
 
 server.listen(PORT, ()=>console.log(`Http server is running on: http://localhost:${PORT}`));
