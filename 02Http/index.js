@@ -1,50 +1,45 @@
 
 const http = require("node:http");
+const fs = require("node:fs");
 const PORT = 8000;
 
 const server = http.createServer((req,res)=>{
-      console.log(`Incoming request....`);
       const method = req.method;
       const path = req.url;
-     
+
+      const log = `\n[${Date.now()}] : ${method} ${path}`;
+      fs.appendFileSync("log.txt", log, "utf-8");
+
       switch (method) {
             case "GET":
-                  switch (path) {
+
+                {  switch (path) {
                         case "/":
-                              res.writeHead(200).end("<h1>Home Page</h1>");   
-                              break;
-
+                              return res.writeHead(200).end("Home Page");
+                        
                         case "/about-me":
-                              res.writeHead(200).end("<h1>About Page</h1>");
-                              break;
+                              return res.writeHead(200).end("About Page");
 
-                        case "/contact":
-                              res.writeHead(200).end("<h1>Contact Page</h1>");
-                              break;
+                        case "/contact-me":
+                              return res.writeHead(200).end("Contact Page");
                   
                         default:
-                              res.writeHead(404).end("<h1>Sorry Page Not Found!</h1>")
-                              break;
+                              return res.writeHead(404).end("Sorry, route not found");
+                        }
                   }
-            break;
-
+                  
             case "POST":
-                  switch(path){
+                  switch (path) {
                         case "/tweet":
-                              try {
-                                    
-                              } catch (error) {
-                                    
-                              }
+                              return res.writeHead(201).end("Tweet created successfully");
+
+                        default:
+                             return res.writeHead(404).end("Page not found");
                   }
-      
             default:
-                  res.writeHead(404);
-                  res.end("Sorry wrong request");
-                  break;
+                  return res.writeHead(404).end("Sorry, wrong method");
       }
-
-
 })
 
-server.listen(PORT, ()=>console.log(`Http server is running on: http://localhost:${PORT}`));
+
+server.listen(PORT,()=>{console.log("Server running on localhost:8000")});
