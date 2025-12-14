@@ -3,12 +3,31 @@ const http = require("node:http");
 const PORT = 8000;
 
 const server = http.createServer((req,res)=>{
-      console.log(`Incoming request at [${Date.now()}]`);
-      console.log(req.headers)
-      
+      const method = req.method;
+      const path = req.url;
+     
+      switch (method) {
+            case "GET":
+                  switch (path) {
+                        case "/":
+                              res.writeHead(200).end("Welcome Home");
+                              break;
 
-      res.writeHead(200);
-      res.end(`Hey, you can accept ${req.headers["accept-language"]}`)
-});
+                        case "/contact-us":
+                              res.writeHead(200).end("mulbahb997@gmail.com");
+                              break;
 
-server.listen(PORT, ()=>console.log(`Server is running on 8000 `));
+                        case "/about":
+                              res.writeHead(200).end("I am a Software Engineer");
+                              break;
+                        default:
+                              res.writeHead(404).end("page not found");
+                              break;
+                  }
+                  break;
+            case "POST":
+                  break;
+      }     
+})
+
+server.listen(PORT, ()=>console.log(`Http server is running on: http://localhost:${PORT}`));
