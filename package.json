@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/iceyben/Backend-dev-Nodejs/issues"
   },
-  "homepage": "https://github.com/iceyben/Backend-dev-Nodejs#readme"
+  "homepage": "https://github.com/iceyben/Backend-dev-Nodejs#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
 }
