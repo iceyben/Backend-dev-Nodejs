@@ -18,8 +18,8 @@ app.get("/books", (req,res)=>{
 })
 
 app.get("/books/:id", (req,res)=>{
-      const id = req.params.id;
-      const book = books.find((e) =>e.id == id);
+      const id = parseInt(req.params.id);
+      const book = books.find((e) =>e.id === id);
       
      if(!book){
             return res.status(404).json({error: `Book with the ID ${id} is not available`});
@@ -49,6 +49,29 @@ app.post("/books", (req,res)=>{
       return res.status(201).json({message: `Book for created successfully! id:${id}`});
 })
 
+app.patch("/books/:id", (req, res)=>{
+      const id =parseInt(req.params.id);
+
+      if(isNaN(id)){
+            return res.status(404).json({error: `id must me a number`});
+      }
+      const book = books.find((b) => b.id === id);
+
+      if(!book){
+            return res.status(404).json({error: `Book with ID: ${id} not found`});
+      }
+
+      // Update the book details now
+      if(req.body.title){
+            book.title = req.body.title;
+      }
+      if(req.body.author){
+            book.author = req.body.author;
+      }
+
+      return res.json({message: `Book was updated successfully`, data : book});
+
+})
 app.listen(PORT,()=>{
       console.log(`Server is running on localhost:${PORT}`);
 })
