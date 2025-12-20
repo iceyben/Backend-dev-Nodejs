@@ -1,5 +1,6 @@
 
 const express = require("express");
+const fs = require("fs");
 const app = express();
 const PORT = 8000;
 
@@ -12,7 +13,18 @@ const books = [
 //Middleware plugin
 app.use(express.json());
 
+//Middleware to log endpoints requests
+app.use((req,res,next)=>{
+      const log = `\n[Date:${Date.now()}] : Method:${req.method} : Path: ${req.path})}`
+      fs.appendFileSync("logs.txt", log, "utf-8");
+      next()
+})
+
 //Routes 
+app.get("/", (req,res)=>{
+     return res.end("Welcome home");
+})
+
 app.get("/books", (req,res)=>{
      return res.json(books);
 })
