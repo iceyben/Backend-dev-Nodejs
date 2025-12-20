@@ -72,6 +72,26 @@ app.patch("/books/:id", (req, res)=>{
       return res.json({message: `Book was updated successfully`, data : book});
 
 })
+
+app.delete("/books/:id", (req,res)=>{
+      const id = parseInt(req.params.id);
+      
+      if(isNaN(id)){
+            return res.status(404).json({error: `id must be a number`});
+            
+      }
+      const book = books.find((i)=> i.id === id)
+
+      if(!book || book === -1){
+            return res.status(404).json({error: `Book with ID of ${id} not found`});
+      }
+
+      //Delete the book 
+      books.splice(book, 1);
+
+      return res.status(200).json({message: `Book was deleted successfully!`});
+})
+
 app.listen(PORT,()=>{
       console.log(`Server is running on localhost:${PORT}`);
 })
