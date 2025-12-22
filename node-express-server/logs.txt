@@ -39,3 +39,7 @@
 [Date:1766327801176] : Method:GET : Path: /books/1)}
 [Date:1766327883115] : Method:GET : Path: /books/1
 [Date:1766327887771] : Method:GET : Path: /books/
+[Date:1766367870486] : Method:GET : Path: /
+[Date:1766368230542] : Method:GET : Path: /1
+[Date:1766368246645] : Method:GET : Path: /books/
+[Date:1766368251404] : Method:GET : Path: /books/1
