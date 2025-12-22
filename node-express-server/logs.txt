@@ -10,3 +10,32 @@
 [1766195623637] : GET : /books/3
 [Date:1766196298908] : Method:GET : Path/books/3
 [Date:1766196387664] : Method:GET : Path/books)}
+[Date:1766325381282] : Method:GET : Path: /books/)}
+[Date:1766325389783] : Method:GET : Path: /books/1)}
+[Date:1766325501265] : Method:GET : Path: /books/1)}
+[Date:1766326517676] : Method:GET : Path: /books/1)}
+[Date:1766326594484] : Method:GET : Path: /books/)}
+[Date:1766326772623] : Method:GET : Path: /books/)}
+[Date:1766326786071] : Method:GET : Path: /books/)}
+[Date:1766326791459] : Method:GET : Path: /books/1)}
+[Date:1766326814942] : Method:GET : Path: /books/1)}
+[Date:1766326821550] : Method:GET : Path: /books/)}
+[Date:1766327159403] : Method:GET : Path: /books/)}
+[Date:1766327165451] : Method:GET : Path: /books/)}
+[Date:1766327214028] : Method:GET : Path: /books/)}
+[Date:1766327379159] : Method:GET : Path: /books/)}
+[Date:1766327437851] : Method:GET : Path: /books/)}
+[Date:1766327473193] : Method:GET : Path: /books/)}
+[Date:1766327475427] : Method:GET : Path: /books/)}
+[Date:1766327534362] : Method:GET : Path: /books/)}
+[Date:1766327547488] : Method:GET : Path: /books/1)}
+[Date:1766327570120] : Method:GET : Path: /books/)}
+[Date:1766327579328] : Method:GET : Path: /books/1)}
+[Date:1766327595899] : Method:GET : Path: /books/)}
+[Date:1766327735397] : Method:POST : Path: /books/)}
+[Date:1766327774719] : Method:GET : Path: /books/)}
+[Date:1766327781693] : Method:GET : Path: /books/)}
+[Date:1766327794367] : Method:GET : Path: /books/)}
+[Date:1766327801176] : Method:GET : Path: /books/1)}
+[Date:1766327883115] : Method:GET : Path: /books/1
+[Date:1766327887771] : Method:GET : Path: /books/
